@@ -1,4 +1,5 @@
-## Rails App & MySql Dockerfile
+Rails App & MySql Dockerfile
+===============
 
 
 This repository contains **Dockerfile** of [MySql](http://www.mysql.com/) for [Docker](https://www.docker.io/) published to the public [Docker Registry](https://index.docker.io/).

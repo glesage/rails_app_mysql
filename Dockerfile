@@ -1,4 +1,4 @@
-# Node.js & Rails 4 environment
+# Rails 4 API environment with MySQL
 #
 # VERSION               0.1
 
