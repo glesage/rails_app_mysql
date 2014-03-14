@@ -2,7 +2,7 @@
 #
 # VERSION               0.1
 
-FROM glesage/ruby211
+FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
