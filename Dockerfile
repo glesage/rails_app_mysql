@@ -7,7 +7,7 @@ MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get install supervisor
+RUN apt-get install -y supervisor
 
 RUN echo mysql-server mysql-server/root_password password root | debconf-set-selections;
 RUN echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;
