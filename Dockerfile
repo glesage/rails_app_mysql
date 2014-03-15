@@ -6,9 +6,10 @@ FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
+RUN apt-get update
 RUN echo mysql-server mysql-server/root_password password root | debconf-set-selections;\
   	echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;\
-  	apt-get install -y mysql-server mysql-client libmysql-ruby libmysqlclient-dev
+  	apt-get install -y mysql-server mysql-client libmysql-ruby libmysqlclient-dev mysql-client-5.5
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
