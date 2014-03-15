@@ -19,7 +19,7 @@ This repository contains **Dockerfile** of [MySql](http://www.mysql.com/) for [D
 
 ### Usage
 
-    docker run -t -i -p 80:80 glesage/rails-app-mysql
+    docker run -d -p 80:80 glesage/rails-app-mysql
 
 
 ### Stack
