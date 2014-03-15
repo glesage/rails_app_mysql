@@ -16,16 +16,18 @@ RUN apt-get -q -y install build-essential zlib1g-dev libssl-dev libreadline6-dev
 
 ADD http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz /tmp/
 
-RUN cd /tmp && \
-    tar -xzf ruby-2.1.1.tar.gz && \
-    cd ruby-2.1.1 && \
-    ./configure && \
-    make && \
-    make install && \
-    cd .. && \
-    rm -rf ruby-2.1.1 && \
-    rm -f ruby-2.1.1.tar.gz\
-    echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+# Ensure UTF-8
+RUN locale-gen en_US.UTF-8
+ENV LANG       en_US.UTF-8
+ENV LC_ALL     en_US.UTF-8
+
+ADD http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz /tmp/
+RUN apt-get -y install build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev && \
+    tar -xzf /tmp/ruby-2.1.1.tar.gz && \
+    (cd ruby-2.1.1/ && ./configure --disable-install-doc && make && make install) && \
+    rm -rf ruby-2.1.1/ && \
+    rm -f /tmp/ruby-2.1.1.tar.gz
+
 
 #
 # NodeJS
@@ -37,7 +39,7 @@ RUN apt-get update && apt-get install -y nodejs
 #
 # Rails
 #
-RUN gem install rails
+RUN gem install --no-rdoc --no-ri rails
 
 # Decouple webapp from container
 VOLUME ["/webapp"]
