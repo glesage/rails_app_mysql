@@ -6,7 +6,7 @@ FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get -y upgrade
+RUN apt-get update
 
 RUN echo mysql-server mysql-server/root_password password root | debconf-set-selections;
 RUN echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;
