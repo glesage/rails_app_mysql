@@ -2,12 +2,11 @@
 #
 # VERSION               0.1
 
-FROM glesage/nodejs-rails4
+FROM brice/mysql
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
-RUN apt-get install -y supervisor
 
 RUN echo mysql-server mysql-server/root_password password root | debconf-set-selections;
 RUN echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;
@@ -17,9 +16,6 @@ RUN apt-get install -y mysql-server mysql-client libmysql-ruby libmysqlclient-de
 VOLUME ["/webapp"]
 
 ADD start.sh /start.sh
-ADD run.sh /run.sh
-ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
-ADD my.cnf /etc/mysql/conf.d/my.cnf
 RUN chmod 755 /*.sh
 
 EXPOSE 3000
