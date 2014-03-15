@@ -14,6 +14,8 @@ echo 'Pre mysql'
 
 service mysql restart
 
+echo 'Med mysql'
+
 echo 'y' | mysqladmin -uroot -proot drop test
 
 mysqladmin -uroot -proot create dev
