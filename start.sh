@@ -10,6 +10,8 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
+service mysql restart
+
 echo 'y' | mysqladmin -uroot -proot drop test
 
 mysqladmin -uroot -proot create dev
