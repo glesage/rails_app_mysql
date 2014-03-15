@@ -10,8 +10,8 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
-service mysql restart
-/etc/init.d/mysqld restart
+stop mysql
+start mysql
 
 echo 'y' | mysqladmin -uroot -proot drop test
 
