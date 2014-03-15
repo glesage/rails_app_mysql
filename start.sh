@@ -12,7 +12,16 @@ cd $DATADIR
 
 service mysql restart
 
+echo 'Pre search'
+
 var=$(find / -type s | grep mysqld.sock) && echo $var
+
+sleep 3
+
+echo $var
+
+echo 'Pre mysqladmin'
+
 echo 'y' | mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot drop test
 
 mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot create dev
