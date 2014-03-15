@@ -12,6 +12,7 @@ cd $DATADIR
 
 service mysql restart
 
+find / -type s | grep mysqld.sock
 echo 'y' | mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot drop test
 
 mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot create dev
