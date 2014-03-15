@@ -12,11 +12,11 @@ cd $DATADIR
 
 service mysql restart
 
-echo 'y' | mysqladmin -S /var/run/mysqld/mysqld.sock -uroot -proot drop test
+echo 'y' | mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot drop test
 
-mysqladmin -S /var/run/mysqld/mysqld.sock -uroot -proot create dev
-mysqladmin -S /var/run/mysqld/mysqld.sock -uroot -proot create tets
-mysqladmin -S /var/run/mysqld/mysqld.sock -uroot -proot create prod
+mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot create dev
+mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot create tets
+mysqladmin -S /run/mysqld/mysqld.sock -uroot -proot create prod
 
 bundle install
 rake db:create
