@@ -10,11 +10,11 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
-mysqladmin -uroot -proot drop test
+echo 'y' | mysqladmin -uroot -proot drop test
 
-mysqladmin -uroot -proot create dev
-mysqladmin -uroot -proot create tets
-mysqladmin -uroot -proot create prod
+echo 'y' | mysqladmin -uroot -proot create dev
+echo 'y' | mysqladmin -uroot -proot create tets
+echo 'y' | mysqladmin -uroot -proot create prod
 
 bundle install
 rake db:create
