@@ -10,8 +10,6 @@ RUN echo mysql-server mysql-server/root_password password root | debconf-set-sel
   	echo mysql-server mysql-server/root_password_again password root | debconf-set-selections;\
   	apt-get install -y mysql-server mysql-client libmysql-ruby libmysqlclient-dev
 
-RUN mkdir /home/app/
-
 # Decouple webapp from container
 VOLUME ["/webapp"]
 
