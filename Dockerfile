@@ -45,8 +45,8 @@ RUN gem install --no-rdoc --no-ri rails
 VOLUME ["/webapp"]
 
 ADD start.sh /start.sh
-RUN chmod 755 /*.sh
+RUN chmod 755 /start.sh
 
 EXPOSE 3000
 
-ENTRYPOINT["/start.sh"]
+ENTRYPOINT ["/start.sh"]
