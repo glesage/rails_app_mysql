@@ -30,7 +30,9 @@ RUN cd /tmp && \
 #
 # NodeJS
 #
-RUN apt-get install -y python-software-properties && add-apt-repository -y ppa:chris-lea/node.js && apt-get update && apt-get install -y nodejs
+RUN apt-get install -y software-properties-common 
+RUN add-apt-repository -y ppa:chris-lea/node.js 
+RUN apt-get update && apt-get install -y nodejs
 
 #
 # Rails
