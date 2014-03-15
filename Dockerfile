@@ -5,11 +5,13 @@
 FROM brice/mysql
 MAINTAINER Geoffroy Lesage
 
+
+RUN export DEBIAN_FRONTEND=noninteractive
+
 #
 # Ruby
 #
 RUN apt-get update
-RUN export DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q -y install build-essential zlib1g-dev libssl-dev libreadline6-dev libyaml-dev
 
 ADD http://ftp.ruby-lang.org/pub/ruby/2.1/ruby-2.1.1.tar.gz /tmp/
@@ -28,11 +30,7 @@ RUN cd /tmp && \
 #
 # NodeJS
 #
-RUN apt-get update
-RUN apt-get install -y python-software-properties
-RUN add-apt-repository -y ppa:chris-lea/node.js
-RUN apt-get update
-RUN apt-get install -y nodejs
+RUN apt-get install -y python-software-properties && add-apt-repository -y ppa:chris-lea/node.js && apt-get update && apt-get install -y nodejs
 
 #
 # Rails
