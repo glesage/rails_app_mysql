@@ -10,6 +10,8 @@ chown -R www-data $DATADIR
 
 cd $DATADIR
 
+echo 'Pre mysql'
+
 service mysql restart
 
 echo 'y' | mysqladmin -uroot -proot drop test
@@ -17,6 +19,8 @@ echo 'y' | mysqladmin -uroot -proot drop test
 mysqladmin -uroot -proot create dev
 mysqladmin -uroot -proot create tets
 mysqladmin -uroot -proot create prod
+
+echo 'Post mysql'
 
 bundle install
 rake db:create
