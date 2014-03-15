@@ -6,9 +6,9 @@ FROM glesage/nodejs-rails4
 MAINTAINER Geoffroy Lesage
 
 RUN export DEBIAN_FRONTEND=noninteractive
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
-sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
-sudo apt-get -y install mysql-server mysql-client libmysqlclient-dev
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+RUN apt-get -y install mysql-server mysql-client libmysqlclient-dev
 
 RUN mkdir /home/app/
 
