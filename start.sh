@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mysqld_safe
+
 DATADIR="/webapp"
 
 # Don't continue if we catch an error.
@@ -9,6 +11,8 @@ set -e
 chown -R www-data $DATADIR
 
 cd $DATADIR
+
+sleep 5
 
 echo 'y' | mysqladmin -uroot -proot drop test
 
