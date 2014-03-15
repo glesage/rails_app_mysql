@@ -16,8 +16,12 @@ RUN apt-get install -y mysql-client libmysql-ruby libmysqlclient-dev mysql-clien
 # Decouple webapp from container
 VOLUME ["/webapp"]
 
+ADD start.sh /start.sh
+ADD run.sh /run.sh
+ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+ADD my.cnf /etc/mysql/conf.d/my.cnf
+RUN chmod 755 /*.sh
+
 EXPOSE 3000
 
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
-ENTRYPOINT ["/start.sh"]
+CMD ["/run.sh"]
