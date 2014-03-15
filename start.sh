@@ -1,24 +1,22 @@
 #!/bin/bash
 
-exec DATADIR="/webapp"
+DATADIR="/webapp"
 
 # Don't continue if we catch an error.
-exec set -e
+set -e
 
 # Ensure server owns the DATADIR
-exec chown -R www-data $DATADIR
+chown -R www-data $DATADIR
 
-exec cd $DATADIR
+cd $DATADIR
 
-exec mysqld_safe
+echo 'y' | mysqladmin -uroot -proot drop test
 
-exec echo 'y' | mysqladmin -uroot -proot drop test
+mysqladmin -uroot -proot create dev
+mysqladmin -uroot -proot create tets
+mysqladmin -uroot -proot create prod
 
-exec mysqladmin -uroot -proot create dev
-exec mysqladmin -uroot -proot create tets
-exec mysqladmin -uroot -proot create prod
-
-exec bundle install
-exec rake db:create
-exec rake db:migrate
-exec rails s
+bundle install
+rake db:create
+rake db:migrate
+rails s

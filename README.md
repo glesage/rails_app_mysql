@@ -1,20 +1,20 @@
-Rails App & MySql Dockerfile
+Environment for Rails App with MySql, Ruby 2.1.1 & NodeJS
 ===============
 
 
-This repository contains **Dockerfile** of [MySql](http://www.mysql.com/) for [Docker](https://www.docker.io/) published to the public [Docker Registry](https://index.docker.io/).
+This Dockerfile is published to the public [Docker Registry](https://index.docker.io/).
 
 
 ### Dependencies
 
-* [glesage/nodejs-rails4](https://index.docker.io/u/glesage/nodejs-rails4)
+* [brice/mysql/](https://index.docker.io/u/brice/mysql)
 
 
 ### Installation
 
 1. Install [Docker](https://www.docker.io/).
 
-2. Download [build](https://index.docker.io/u/glesage/rails-app-mysql/) from public [Docker Registry](https://index.docker.io/): `docker pull glesage/rails-app-mysql`
+2. Download [build](https://index.docker.io/u/glesage/rails-app-mysql) from public [Docker Registry](https://index.docker.io/): `docker pull glesage/rails-app-mysql`
 
 
 ### Usage
