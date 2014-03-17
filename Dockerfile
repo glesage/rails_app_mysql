@@ -11,7 +11,10 @@ RUN export DEBIAN_FRONTEND=noninteractive
 #
 # MySql
 #
-RUN apt-get -y install mysql-server libmysqlclient-dev
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
+RUN apt-get -y install mysql-server libmysqlclient-dev 
+# mysql-client libmysql-ruby
 
 
 # Decouple webapp from container
