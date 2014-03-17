@@ -1,5 +1,5 @@
-Environment for Rails App with MySql, Ruby 2.1.1 & NodeJS
-===============
+Rails App with MySql, Ruby 2.1.1 & NodeJS
+=========================================
 
 
 This Dockerfile is published to the public [Docker Registry](https://index.docker.io/).
