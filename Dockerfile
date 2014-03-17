@@ -11,7 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive
 #
 # MySql
 #
-RUN apt-get -y install mysql-client-5.5 mysql-server-5.5
+RUN apt-get -y install mysql-server libmysqlclient-dev
 
 
 # Decouple webapp from container
