@@ -7,7 +7,7 @@ This Dockerfile is published to the public [Docker Registry](https://index.docke
 
 ### Dependencies
 
-* [brice/mysql/](https://index.docker.io/u/brice/mysql)
+* [nodejs-rails4](https://index.docker.io/u/nodejs-rails4)
 
 
 ### Installation
