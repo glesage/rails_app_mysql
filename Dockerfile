@@ -22,4 +22,4 @@ RUN chmod 755 /start.sh
 
 EXPOSE 3000
 
-ENTRYPOINT ["/start.sh"]
+CMD ["/start.sh"]
