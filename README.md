@@ -20,6 +20,7 @@ This Dockerfile is published to the public [Docker Registry](https://index.docke
 ### Usage
 
     docker run -d -p 3000:80 -v /home/me/webapp:/webapp glesage/rails-app-mysql
+    docker run -t -i -p 3000:80 -v /home/me/webapp:/webapp glesage/rails-api-mysql /bin/bash
 
 
 ### Stack
